@@ -1,4 +1,5 @@
 (() => {
+  const GUMROAD_LINK = 'https://toxabhimanyu.gumroad.com/l/udigsu';
   const results = document.getElementById('resultsContent');
   if (!results) return;
 
@@ -41,14 +42,14 @@
   }
 
   function pay() {
-    alert('Payment checkout is the next setup step. Send your Stripe Price ID and I will connect this button to Stripe/Firebase checkout.');
+    window.open(GUMROAD_LINK, '_blank', 'noopener');
   }
 
   function add() {
     if (!results.querySelector('.score-card') || document.getElementById('premiumTools')) return;
     const d = data();
     const paragraphs = review(d).map(p => `<p>${p}</p>`).join('');
-    results.insertAdjacentHTML('beforeend', `<div id="premiumTools" class="domain-card" style="border-radius:18px;padding:22px;background:white;box-shadow:var(--shadow)"><p class="eyebrow">Premium tools</p><h3>Certificate, sharing, and in-depth review</h3><p style="color:var(--muted);line-height:1.7">Users can unlock an eCertificate, share their score, and read a deeper review after completing the test.</p><div class="hero-actions" style="margin-top:14px"><button class="button primary" id="payCert">Unlock eCertificate</button><button class="button secondary" id="downloadCert">Open eCertificate PDF</button><button class="button secondary" id="shareScore">Share score</button></div></div><div class="domain-card" style="border-radius:18px;padding:22px;background:white"><p class="eyebrow">In-depth review</p><h3>Personal cognitive review</h3><div style="color:var(--muted);line-height:1.7">${paragraphs}</div></div>`);
+    results.insertAdjacentHTML('beforeend', `<div id="premiumTools" class="domain-card" style="border-radius:18px;padding:22px;background:white;box-shadow:var(--shadow)"><p class="eyebrow">Premium tools</p><h3>Certificate, sharing, and in-depth review</h3><p style="color:var(--muted);line-height:1.7">Unlock the eCertificate checkout, share the score, and view a deeper personal review after completing the test.</p><div class="hero-actions" style="margin-top:14px"><button class="button primary" id="payCert">Unlock eCertificate</button><button class="button secondary" id="downloadCert">Open eCertificate PDF</button><button class="button secondary" id="shareScore">Share score</button></div></div><div class="domain-card" style="border-radius:18px;padding:22px;background:white"><p class="eyebrow">In-depth review</p><h3>Personal cognitive review</h3><div style="color:var(--muted);line-height:1.7">${paragraphs}</div></div>`);
     document.getElementById('payCert').onclick = pay;
     document.getElementById('downloadCert').onclick = certificate;
     document.getElementById('shareScore').onclick = shareScore;
