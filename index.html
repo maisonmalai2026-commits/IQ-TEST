@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional IQ-Style Practice Test</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#">
+        <span class="brand-mark">IQ</span>
+        <span>
+          <strong>CogniScale</strong>
+          <small>Professional IQ-Style Practice</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#overview">Overview</a>
+        <a href="#test">Test</a>
+        <a href="#results">Results</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow">Free cognitive reasoning challenge</p>
+          <h1>Professional IQ-Style Practice Test</h1>
+          <p class="hero-text">
+            A polished timed test with original reasoning questions across pattern recognition,
+            numerical reasoning, verbal analogies, logic, and attention. Built for practice,
+            self-study, and personal challenge.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#test">Start the test</a>
+            <button class="button secondary" id="demoScoreButton" type="button">View scoring</button>
+          </div>
+          <div class="trust-row" aria-label="Test highlights">
+            <span>40 original questions</span>
+            <span>25-minute timer</span>
+            <span>Instant score report</span>
+          </div>
+          <p class="notice">
+            This is an original IQ-style practice test. It is not a clinical assessment,
+            medical diagnosis, or official IQ score.
+          </p>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="mini-test-card">
+            <span class="mini-label">Sample item</span>
+            <h2>2, 5, 11, 23, 47, ?</h2>
+            <div class="mini-options">
+              <span>73</span><span>91</span><span class="selected">95</span><span>101</span>
+            </div>
+          </div>
+          <div class="stats-grid">
+            <div><strong>5</strong><small>Reasoning domains</small></div>
+            <div><strong>100%</strong><small>Original items</small></div>
+            <div><strong>Private</strong><small>No data upload</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="test" aria-labelledby="test-title">
+        <div class="section-heading">
+          <p class="eyebrow">Assessment interface</p>
+          <h2 id="test-title">Take the test</h2>
+          <p>Answer as many as you can before the timer ends. You can skip and return to questions.</p>
+        </div>
+
+        <div class="test-layout">
+          <aside class="test-sidebar" aria-label="Test status">
+            <div class="timer-card">
+              <span>Time remaining</span>
+              <strong id="timer">25:00</strong>
+              <div class="timer-bar"><span id="timerBar"></span></div>
+            </div>
+            <div class="progress-card">
+              <span>Progress</span>
+              <strong><span id="answeredCount">0</span>/<span id="totalCount">40</span></strong>
+              <div class="progress-bar"><span id="progressBar"></span></div>
+            </div>
+            <div class="section-list" id="sectionList"></div>
+          </aside>
+
+          <div class="question-card" id="questionCard">
+            <div class="start-screen" id="startScreen">
+              <h3>Ready to begin?</h3>
+              <p>
+                The test is timed. Once you press start, the timer begins. Your answers stay in
+                your browser only.
+              </p>
+              <button class="button primary" id="startButton" type="button">Start 25-minute test</button>
+            </div>
+
+            <div class="quiz-screen hidden" id="quizScreen">
+              <div class="question-meta">
+                <span id="questionNumber">Question 1</span>
+                <span id="questionSection">Numerical Reasoning</span>
+                <span id="questionDifficulty">Medium</span>
+              </div>
+              <div class="question-prompt" id="questionPrompt"></div>
+              <div class="options" id="options"></div>
+              <div class="quiz-actions">
+                <button class="button secondary" id="prevButton" type="button">Previous</button>
+                <button class="button ghost" id="clearButton" type="button">Clear</button>
+                <button class="button secondary" id="nextButton" type="button">Next</button>
+                <button class="button primary" id="submitButton" type="button">Submit test</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel results-panel" id="results" aria-labelledby="results-title">
+        <div class="section-heading">
+          <p class="eyebrow">Score report</p>
+          <h2 id="results-title">Results</h2>
+          <p>Your score report appears here after you submit.</p>
+        </div>
+        <div id="resultsContent" class="empty-results">
+          <p>No result yet. Complete the test to generate your report.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> CogniScale. Original IQ-style practice questions for personal learning.</p>
+      <p>Not a clinical assessment, medical diagnosis, employment test, or official IQ score.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
